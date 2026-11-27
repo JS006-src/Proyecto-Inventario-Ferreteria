@@ -16,5 +16,8 @@ public class InventarioFerreteria {
         }
         System.out.println(tree.searchById("000000070").getName());
         System.out.println(tree.insert(new Producto("000000030", "Repetido", 1, "A3", price, "x.jpg")));
+        for (Producto p : tree.searchByName("MART")) {
+            System.out.println("Encontrado: " + p.getName());
+        }
     }
 }

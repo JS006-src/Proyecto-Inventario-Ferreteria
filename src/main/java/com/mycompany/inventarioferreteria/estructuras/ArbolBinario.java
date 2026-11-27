@@ -23,6 +23,21 @@ public class ArbolBinario {
         inOrderRec(root, result);
         return result;
     }
+    public List<Producto> searchByName(String name){
+        List<Producto> result = new ArrayList<>();
+        searchByNameRec(root,name.toLowerCase(),result);
+        return result;
+    }
+    private void searchByNameRec(Nodo current, String name, List<Producto> result){
+        if (current == null){
+            return;
+        }
+        searchByNameRec(current.getLeft(),name,result);
+        if (current.getData().getName().toLowerCase().contains(name)){
+            result.add(current.getData());
+        }
+        searchByNameRec(current.getRight(),name,result);
+    }
     private void inOrderRec(Nodo current, List<Producto> result){
         if (current == null){
             return;
