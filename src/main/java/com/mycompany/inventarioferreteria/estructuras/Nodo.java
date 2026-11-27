@@ -1,13 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.inventarioferreteria.estructuras;
-
-/**
- *
- * @author alexh
- */
+/*@author alexh*/
+import com.mycompany.inventarioferreteria.modelo.Producto;
 public class Nodo {
+    private Producto data;
+    private Nodo left;
+    private Nodo right;
     
+    public Nodo (Producto data){
+        this.data = data;
+    }
+    public Producto getData(){
+        return data;
+    }
+    public Nodo getLeft(){
+        return left;
+    }
+    public void setLeft(Nodo left){
+        this.left = left;
+    }
+    public Nodo getRight(){
+        return right;
+    }
+    public void setRight(Nodo right){
+        this.right = right;
+    }
 }
