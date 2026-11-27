@@ -24,4 +24,8 @@ public class Nodo {
     public void setRight(Nodo right){
         this.right = right;
     }
+
+    public void setData(Producto data){
+        this.data = data;
+    }
 }

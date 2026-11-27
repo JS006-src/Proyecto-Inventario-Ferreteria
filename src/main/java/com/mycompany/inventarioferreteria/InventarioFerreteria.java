@@ -19,5 +19,10 @@ public class InventarioFerreteria {
         for (Producto p : tree.searchByName("MART")) {
             System.out.println("Encontrado: " + p.getName());
         }
+        System.out.println(tree.delete("000000050"));
+        System.out.println(tree.delete("000000050"));
+        for (Producto p : tree.inOrder()) {
+            System.out.println(p.getName());
+        }
     }
 }
