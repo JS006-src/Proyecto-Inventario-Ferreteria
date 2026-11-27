@@ -1,4 +1,6 @@
 package com.mycompany.inventarioferreteria.estructuras;
+import java.util.ArrayList;
+import java.util.List;
 /*@author alexh*/
 import com.mycompany.inventarioferreteria.modelo.Producto;
 
@@ -15,6 +17,19 @@ public class ArbolBinario {
     }
     public Producto searchById(String id){
         return searchRec(root, id);
+    }
+    public List<Producto> inOrder(){
+        List<Producto> result = new ArrayList<>();
+        inOrderRec(root, result);
+        return result;
+    }
+    private void inOrderRec(Nodo current, List<Producto> result){
+        if (current == null){
+            return;
+        }
+        inOrderRec(current.getLeft(),result);
+        result.add(current.getData());
+        inOrderRec(current.getRight(),result);
     }
     private Producto searchRec(Nodo current, String id){
         if (current == null){
@@ -46,5 +61,6 @@ public class ArbolBinario {
         
         return current;
     }
+    
     
 } 
