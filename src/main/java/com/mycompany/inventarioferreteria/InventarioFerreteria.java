@@ -2,6 +2,7 @@ package com.mycompany.inventarioferreteria;
 /*@author alexh*/
 import com.mycompany.inventarioferreteria.estructuras.ArbolBinario;
 import com.mycompany.inventarioferreteria.modelo.Producto;
+import com.mycompany.inventarioferreteria.modelo.Usuario;
 import java.math.BigDecimal;
 public class InventarioFerreteria {
 
@@ -24,5 +25,8 @@ public class InventarioFerreteria {
         for (Producto p : tree.inOrder()) {
             System.out.println(p.getName());
         }
+        Usuario user = new Usuario("jano", "abc123");
+        System.out.println(user.verifyPass("abc123")); // true
+        System.out.println(user.verifyPass(".*"));     // false
     }
 }
