@@ -14,7 +14,21 @@ public class ArbolBinario {
         return true;
     }
     public Producto searchById(String id){
-        return null;
+        return searchRec(root, id);
+    }
+    private Producto searchRec(Nodo current, String id){
+        if (current == null){
+            return null;
+        }
+        int comparison = id.compareTo(current.getData().getId());
+        if (comparison == 0){
+            return current.getData();
+        }
+        if (comparison < 0){
+            return searchRec(current.getLeft(),id);
+        }else{
+            return searchRec(current.getRight(),id);
+        }
     }
     private Nodo insertRec(Nodo current,Producto product){
         
